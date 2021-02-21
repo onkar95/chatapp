@@ -7,7 +7,7 @@ import Input from './input/Input';
 import './Chat.css';
 let socket;
 const Chat = () => {
-    const ENDPT = 'localhost:5000';
+    const ENDPT = 'https://new-chat-app-udmy.herokuapp.com';
 
     const { user, setUser } = useContext(UserContext);
     let { room_id, room_name } = useParams();

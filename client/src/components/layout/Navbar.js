@@ -7,7 +7,7 @@ const Navbar = () => {
 
     const logout = async () => {
         try {
-            const res = await fetch('http://localhost:5000/logout', {
+            const res = await fetch('https://new-chat-app-udmy.herokuapp.com/logout', {
                 credentials: 'include',
             });
             const data = res.json();
