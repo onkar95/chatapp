@@ -18,7 +18,7 @@ const mongoose = require('mongoose');
 const socketio = require('socket.io')
 const io = socketio(http);
 const mongoDB = "mongodb+srv://onkar:onkar@cluster0.evnra.mongodb.net/chat-app?retryWrites=true&w=majority";
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('mongodb connected')).catch(err => console.log(err))
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true }).then(() => console.log('mongodb connected')).catch(err => console.log(err))
 const { addUser, getUser, removeUser } = require('./helper');
 const Message = require('./models/Message');
 const PORT = process.env.PORT || 5000;
