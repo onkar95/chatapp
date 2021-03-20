@@ -3,8 +3,8 @@ const app = express();
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
 var corsOptions = {
-    origin: 'http://localhost:3000',
-    // origin: 'https://new-chat-app-udmy.herokuapp.com',
+    // origin: 'http://localhost:3000',
+    origin: 'https://new-chat-app-udmy.herokuapp.com',
     credentials: true,
     optionsSuccessStatus: 200 // For legacy browser support
 }
