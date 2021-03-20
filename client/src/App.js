@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { UserContext } from './UserContext';
 import Chat from './components/chat/Chat';
@@ -12,7 +12,8 @@ function App() {
   useEffect(() => {
     const verifyUser = async () => {
       try {
-        const res = await fetch('https://new-chat-app-udmy.herokuapp.com/verifyuser', {
+        // const res = await fetch('https://new-chat-app-udmy.herokuapp.com/verifyuser', {
+        const res = await fetch('http://localhost:5000/verifyuser', {
           credentials: 'include',
           headers: { 'Content-Type': 'application/json' }
         });
@@ -29,7 +30,6 @@ function App() {
 
   }, [])
   return (
-    <HashRouter>
     <Router>
       <div className="App">
         <UserContext.Provider value={{ user, setUser }}>
@@ -43,8 +43,7 @@ function App() {
           </Switch>
         </UserContext.Provider>
       </div>
-      </Router>
-      </HashRouter>
+    </Router>
   );
 }
 

@@ -8,7 +8,9 @@ const Home = () => {
     const { user, setUser } = useContext(UserContext);
     const [room, setRoom] = useState('');
     const [rooms, setRooms] = useState([]);
-    const ENDPT = 'https://new-chat-app-udmy.herokuapp.com';
+    // const ENDPT = 'https://new-chat-app-udmy.herokuapp.com';
+    const ENDPT = 'http://localhost:5000';
+
     useEffect(() => {
         socket = io(ENDPT);
         return () => {

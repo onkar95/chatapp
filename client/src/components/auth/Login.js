@@ -17,7 +17,8 @@ const Login = () => {
         setPasswordError('');
         console.log(name, email, password)
         try {
-            const res = await fetch('https://new-chat-app-udmy.herokuapp.com/login', {
+            // const res = await fetch('https://new-chat-app-udmy.herokuapp.com/login', {
+            const res = await fetch('http://localhost:5000/login', {
                 method: 'POST',
                 credentials: 'include',
                 body: JSON.stringify({ name, email, password }),
@@ -38,6 +39,11 @@ const Login = () => {
             console.log(error)
         }
     }
+    const demoLogin = () => {
+        setEmail('user@User.com')
+        setPassword('123123')
+}
+
     if (user) {
         return <Redirect to="/" />
     }
@@ -68,6 +74,7 @@ const Login = () => {
                 </div>
 
                 <button className="btn">Login</button>
+                <button className="btn" onClick={demoLogin}> Demo Login</button>
             </form>
         </div>
 
