@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from '../../UserContext';
 import { Redirect } from 'react-router-dom';
+// import '../../../node_modules/'
 const Login = () => {
     const { user, setUser } = useContext(UserContext);
 
@@ -74,7 +75,8 @@ const Login = () => {
                 </div>
 
                 <button className="btn">Login</button>
-                <button className="btn" onClick={demoLogin}> Demo Login</button>
+
+                <button className="btn my-1" style={{marginLeft:'4px'}} onClick={demoLogin}> Demo Login</button>
             </form>
         </div>
 
